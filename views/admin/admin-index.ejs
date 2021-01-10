@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ADMIN | Login</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link
+			rel="stylesheet"
+			href="font/font-awesome-4.7.0/css/font-awesome.css"
+		/>
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
+
+	<body>
+		<div id="wrapper-admin" class="body-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-offset-4 col-md-4">
+						<img class="logo" src="images/news.jpg" />
+						<h3 class="heading">Admin</h3>
+						<!-- Form Start -->
+						<form action="/admin/login" method="POST">
+							<div class="form-group">
+								<label>Username</label>
+								<input
+									type="text"
+									name="user"
+									class="form-control"
+									placeholder=""
+									value="<%=user.user%>"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input
+									type="password"
+									name="password"
+									class="form-control"
+									value="<%= user.password%>"
+									placeholder=""
+									required
+								/>
+							</div>
+							<%if(user.user){%>
+							<input
+								type="checkbox"
+								checked
+								name="remember"
+								value="true"
+							/>remeber me <%} else{ %>
+							<input type="checkbox" name="remember" value="true" />remeber me
+							<%}%>
+							<br />
+							<input type="submit" class="btn btn-primary" value="login" />
+						</form>
+						<!-- /Form  End -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

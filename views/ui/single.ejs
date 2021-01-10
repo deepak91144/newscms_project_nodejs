@@ -1,0 +1,43 @@
+<%- include("header.ejs") %>
+<div id="main-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<!-- post-container -->
+				<div class="post-container">
+					<div class="post-content single-post">
+						<h3><%= posts.title%></h3>
+						<div class="post-information">
+							<span>
+								<i class="fa fa-tags" aria-hidden="true"></i>
+								<a href="/category/<%= posts.category._id%>"
+									><%= posts.category.category%></a
+								>
+							</span>
+							<span>
+								<i class="fa fa-user" aria-hidden="true"></i>
+								<a href="/author/<%= posts.user._id%>"><%= posts.user.user%></a>
+							</span>
+							<span>
+								<i class="fa fa-calendar" aria-hidden="true"></i>
+								<%= posts.creationTime%>
+							</span>
+						</div>
+
+						<img
+							class="single-feature-image"
+							src="/admin/postimg/<%= posts.img %>"
+							alt="frekgk"
+							;
+						/>
+
+						<p class="description"><%= posts.description%></p>
+					</div>
+				</div>
+				<!-- /post-container -->
+			</div>
+			<%- include("sidebar.ejs") %>
+		</div>
+	</div>
+</div>
+<%- include("footer.ejs") %>

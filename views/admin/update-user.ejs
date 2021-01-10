@@ -1,0 +1,64 @@
+<%- include("header.ejs") %>
+<div id="admin-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="admin-heading">Modify User Details</h1>
+			</div>
+			<div class="col-md-offset-4 col-md-4">
+				<!-- Form Start -->
+				<form action="/admin/user/save-updated-user" method="POST">
+					<input type="hidden" name="id" value="<%= user._id %>" />
+					<div class="form-group">
+						<label>First Name</label>
+						<input
+							type="text"
+							name="fname"
+							value="<%= user.fname %>"
+							class="form-control"
+							placeholder=""
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label>Last Name</label>
+						<input
+							type="text"
+							name="lname"
+							value="<%= user.lname %>"
+							class="form-control"
+							placeholder=""
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label>User Name</label>
+						<input
+							type="text"
+							name="user"
+							class="form-control"
+							value="<%= user.user %>"
+							placeholder=""
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label>User Role</label>
+						<select class="form-control" name="role">
+							<option value="0">normal User</option>
+							<option value="1" <%="isSelected" %>>Admin</option>
+						</select>
+					</div>
+					<input
+						type="submit"
+						class="btn btn-primary"
+						value="Update"
+						required
+					/>
+				</form>
+				<!-- /Form -->
+			</div>
+		</div>
+	</div>
+</div>
+<%- include("footer.ejs") %>
